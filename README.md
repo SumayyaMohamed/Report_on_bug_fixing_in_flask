@@ -87,53 +87,99 @@ if __name__ == '__main__':
 
 # Here is the representation of the code snippet, illustrating the corrections made to resolve the bugs.
 
-#STEP-1 importing flask
+# Python code
+
+#STEP-1 
+
+importing flask
+
 from flask import Flask, render_template, request # (request) used to take query parameters from user interface
                                                 # (render_template) for html
+                                                
 
-#STEP-2 Init a flask object with __name__ parameter 
+#STEP-2 
+
+Init a flask object with __name__ parameter 
+
 app = Flask(__name__)
 
-# STEP-3 Create an end point/route and bind each route with some functionality
+
+# STEP-3 
+
+Create an end point/route and bind each route with some functionality
+
 notes = []
+
 @app.route('/', methods=["GET", "POST"])
+
 def index():
+
     if request.method == "POST":
+    
         note = request.form.get("note", "")
+        
         notes.append(note)
+        
     return render_template("home.html", notes=notes)
+    
 
-#STEP-4 Run the app
+#STEP-4 
+Run the app
+
 if __name__ == '__main__':
+
     app.run(debug=True)
+    
 
 
+#HTML CODE
 
 
 
 <!DOCTYPE html>
+
 <html lang="en">
+        
 <head>
+        
     <meta charset="UTF-8">
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Document</title>
+    
 </head>
+
 <body>
+        
     <h1> ADD A NOTE:</h1>
+    
     <form action="/" method="POST">
+
         <input type="text" name="note" placeholder="Enter a note">
+        
         <button type="submit">Add Note</button>
+        
     </form>
+    
 
     <h3>Your Notes:</h3>
+    
     <ul>
+    
     {% for note in notes%}
+    
         <li>{{ note }}</li>
+        
     {% endfor %}
+    
     </ul>
     
 </body>
+
 </html>
+
 
 
