@@ -1,13 +1,16 @@
 NOTE MAKING APP✍🏻
 
 Scenario:
+
 A team of enthusiastic data scientists embarked on a mission to develop a Note Taking Application using Python, Flask, and HTML. However, their lack of experience in backend development has led to challenges in making the application fully functional. Recognizing your proficiency in backend development, you have been tasked with fixing the broken code and ensuring the application works seamlessly.
 
 
 Task:
+
 Refactor the existing codebase and ensure the proper functioning of the Note Taking Application. Document all identified bugs during the debugging process. Remember, the task is not about recreating the app from scratch. Your goal is to fix the already existing codebase and make the application work as intended.
 
 The following code snippet represents the initial state of  Flask application, which contains identifiable bugs impacting its functionality.
+
 # Python Code 
 
 from flask import Flask, render_template, request 
@@ -17,13 +20,20 @@ app = Flask(__name__)
 
 
 notes = []
+
 @app.route('/', methods=["POST"])
+
 def index():
+
         note = request.args.get("note")
+        
         notes.append(note)
+        
         return render_template("home.html", notes=notes)
+        
 
 if __name__ == '__main__':
+
     app.run(debug=True)
 
 
