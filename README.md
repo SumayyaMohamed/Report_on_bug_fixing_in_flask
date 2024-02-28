@@ -1,4 +1,4 @@
-# NOTE MAKING APP✍🏻
+# NOTE TAKING APP✍🏻
 
 # Scenario:
 
