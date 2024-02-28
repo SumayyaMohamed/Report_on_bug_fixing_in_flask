@@ -13,7 +13,7 @@ The following code snippet represents the initial state of  Flask application, w
 
 # Python Code 
 
-from flask import Flask, render_template, request 
+'''from flask import Flask, render_template, request 
 
 
 app = Flask(__name__)
@@ -34,11 +34,11 @@ def index():
 
 if __name__ == '__main__':
 
-    app.run(debug=True)
+    app.run(debug=True)'''
 
 
 # HTML code
-<!DOCTYPE html>
+'''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -58,7 +58,7 @@ if __name__ == '__main__':
     </ul>
     
 </body>
-</html>
+</html>'''
 
 
 
